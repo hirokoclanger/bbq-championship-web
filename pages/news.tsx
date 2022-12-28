@@ -58,7 +58,7 @@ export default function Home({posts}) {
             <NavigationBar/>
             
      
-            <div className='flex flex-row-2 gap-4 '>
+            <div className='flex flex-row-2 gap-4 justify-between'>
                      
                 <div className='py-5 '> 
                 {posts.map((post) =>(

@@ -1,6 +1,9 @@
 import {GraphQLClient, gql} from 'graphql-request'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 import NavigationBar from '../../components/NavigationBar.tsx'
 import Image from 'next/image';
+
 const graphcms = new GraphQLClient("https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clc4i967301ju01ulcopm3cft/master");
 
 const QUERY = gql`
@@ -19,6 +22,10 @@ const QUERY = gql`
             content{
                 html
                 },
+            gallery{
+              id,
+              url
+            },
             coverPhoto{
                 id, 
                 url
@@ -60,12 +67,10 @@ export default function BlogPost({post}){
         
     <NavigationBar/>
     <section class="text-gray-600 body-font">
-      <div class="container px-5 py-10 mx-auto flex flex-col">
+      <div class="container py-10 flex flex-col justify-between">
             <h1 className='mx-auto text-3xl font-semibold'>{post.title}</h1> 
-        <div class="lg:w-4/6 mx-auto py-4">
-          <div className='rounded-xl'>
-            <div style={{ position: "relative", width: "100%", paddingBottom: "40%" }}><Image src={post.coverPhoto.url}  fill objectFit='cover'  alt="coverphoto"   /></div>
-          </div>
+        <div class="mx-auto py-4">
+         
           <div class="flex flex-col sm:flex-row mt-10">
             <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
              <div class="w-20 h-20 rounded-full inline-flex items-center justify-center bg-gray-200 text-gray-400">
@@ -82,13 +87,20 @@ export default function BlogPost({post}){
                 <p class="text-center text-sm">Erstellt: {post.datePublished}</p>
               </div>
             </div>
-            <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+            <div class="sm:w-2/3 sm:pl-8 pr-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
               <p class="leading-relaxed text-lg mb-4" dangerouslySetInnerHTML={{__html: post.content.html}}></p>
-                         </div>
+            </div>
+          </div>
+          <div className='pt-10 '>
+          <Carousel className="border-solid border-black border-[8px]" useKeyboardArrows={true} swipeable={true} showArrows={true} dynamicHeight={true} showThumbs={false}>    
+            {post.gallery.map((pic) =>(           
+              <img key={pic.id} src={pic.url}  alt="coverphoto"   />
+            ))}
+          </Carousel>
           </div>
         </div>
       </div>
     </section>
     </main>
     )
-    }
+    };

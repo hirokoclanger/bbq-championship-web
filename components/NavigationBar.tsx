@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function NavigationBar(){
         return(
 
-                <div className="py-4">
+                <div className="py-4 w-full">
                 <div className=" flex items-center justify-center lg:flex-nowrap flex-wrap ">
                     <div className="lg:w-11/12">
                         <div className="flex gap-2 py-2 items-center">
