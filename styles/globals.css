@@ -77,11 +77,26 @@ nav{
   justify-content: center;
   align-items: center;
 }
+
+#content {
+  overflow: hidden;
+  width: full;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
 @media screen and (min-width: 640px) {
   .nav__menu-list{
     animation-duration: 0s;
     top: 63px;
    
+  }
+  #content {
+    overflow: visible;
+    width:auto;
+    display: flex;
+  
   }
 }
 @media screen and (min-width: 1290px) {
@@ -112,3 +127,4 @@ nav{
    width: 100%;
   }
 }
+

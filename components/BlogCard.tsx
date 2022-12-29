@@ -27,7 +27,7 @@ export default function BlogCard({title, author, coverPhoto, short, datePublishe
                 <Link  className="lg:text-2xl font-bold text-gray-200 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"  href={'/posts/' + slug} >{title}</Link>
                 <div className="mt-2 flex gap-8">
                     <div className='mt-4 lg:flex hidden' style={{ position: "relative", width: "100%", paddingBottom: "10%" }}><Image src={coverPhoto.url}  fill objectFit='cover'  alt="coverphoto"   /></div>
-                    <p className="mt-2 pt-4 flex flex-col gap-10 lg:w-7/12 text-gray-300  dark:text-gray-300 max-h-100 "><p className='lg:flex hidden'>{short}</p>       
+                    <p className="mt-2 pt-4 flex flex-col gap-10 lg:w-7/12 text-gray-300  dark:text-gray-300 max-h-100 "><p className='lg:flex hidden' id="content">{short}</p>       
                                 <div className='flex w-full  lg:justify-between items-center'> <Link className="text-orange-400 hover:underline  text-sm" href={'/posts/' + slug} >Mehr</Link>
                         <div className="flex items-center lg:justify-end pl-4">
                         <img src={author.avatar.url} alt="" className='lg:h-5 h-4 border-slate-300 drop-shadow-md shadow-black rounded-3xl border-2'/>

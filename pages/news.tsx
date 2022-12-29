@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import {GraphQLClient, gql} from 'graphql-request'
-import NavigationBar from '../components/NavigationBar';
+import Navbar from '../components/NavBar';
 import BlogCard from '../components/BlogCard';
 import Footer from '../components/Footer';
 const graphcms = new GraphQLClient("https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clc4i967301ju01ulcopm3cft/master");
@@ -55,7 +55,7 @@ export default function Home({posts}) {
       </Head>
       <main className='px-16 bg-black/25'>
 
-            <NavigationBar/>
+            <Navbar/>
             
             <div className='flex lg:flex-nowrap flex-wrap bg-black/25'>
                 <div className='bg-grill4 bg-cover bg-repeat-x  lg:w-5/12 w-full '><div className='flex gap-10  px-8 py-4 text-orange-400 font-bold text-4xl items-center justify-start bg-black/25'>

@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import NavigationBar from '../components/NavigationBar';
 import LandingView from '../components/LandingView';
 import Footer from '../components/Footer';
 import Navbar from '../components/NavBar';
