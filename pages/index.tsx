@@ -2,7 +2,7 @@ import Head from 'next/head'
 import NavigationBar from '../components/NavigationBar';
 import LandingView from '../components/LandingView';
 import Footer from '../components/Footer';
-
+import Navbar from '../components/NavBar';
 
 export default function Home({posts}) {
    
@@ -16,11 +16,11 @@ export default function Home({posts}) {
       </Head>
       <main className='px-16'  >
 
-            <NavigationBar/>
-            <div className='flex flex-col-2 h-[90vh] gap-10 '>
-                <div className='bg-grill1 bg-cover w-5/12 '>
+            <Navbar/>
+            <div className='sm:flex flex-col-2 h-[90vh] sm:gap-10 lg:pl-0 pl-8 bg-black/25'>
+                <div className='bg-grill4 bg-cover w-5/12 '>
                 </div>
-                <div className='px-2 py-5'> 
+                <div className='px-2 py-5 '> 
                 <LandingView />
                 </div>
             </div>

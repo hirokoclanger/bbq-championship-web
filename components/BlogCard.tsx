@@ -18,39 +18,37 @@ export default function BlogCard({title, author, coverPhoto, short, datePublishe
     const d = datePublished.substring(5,7)
 
     return(
-        <div className="flex item-center justify-between  gap-0">
-            <div className="w-10/12 px-8 py-4 mt-8 bg-white rounded-lg shadow-md ">
+        <div className="flex  item-center justify-between  px-8 gap-0">
+            <div className="lg:w-10/12 w-full px-8 py-4 mt-8 shadow-sm bg-gray-black/25 hover:bg-black/75 duration-300 ">
                 <div className="flex items-center justify-between min-w-9/12">
-                    <span className="text-sm font-light text-gray-600 bg-white ">{datePublished}</span>
-                    <a className="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500" >{category}</a>
+                    <span className="text-sm  text-gray-500">{datePublished}</span>
+                    <p className="px-3 text-sm font-bold text-gray-800 transition-colors duration-300 transform bg-gray-400  cursor-pointer hover:bg-gray-500" >{category}</p>
                 </div>
-               
-                <div className="mt-2 bg-white ">
-                    <Link  className="text-2xl pb-4 font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"  href={'/posts/' + slug} >{title}</Link>
-                    <div style={{ position: "relative", width: "100%", paddingBottom: "40%" }}><Image src={coverPhoto.url}  fill objectFit='cover'  alt="coverphoto"   /></div>
-                    <p className="mt-2 pt-4 text-gray-600 bg-white dark:text-gray-300 max-h-100 overflow-hidden">{short}</p>
-                </div>
-                <div className="flex items-center justify-between mt-4 bg-white">
-                    <Link className="text-orange-400 hover:underline" href={'/posts/' + slug} >Read more</Link>
-                    <div className="flex items-center bg-white">
-                        <img src={author.avatar.url} alt="" className='h-9 border-white drop-shadow-md shadow-black rounded-3xl border-2'/>
-                        <a className="font-bold text-gray-700 cursor-pointer px-2 dark:text-gray-200 bg-white"   role="link">{author.name}</a>
+                <Link  className="lg:text-2xl font-bold text-gray-200 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline"  href={'/posts/' + slug} >{title}</Link>
+                <div className="mt-2 flex gap-8">
+                    <div className='mt-4 lg:flex hidden' style={{ position: "relative", width: "100%", paddingBottom: "10%" }}><Image src={coverPhoto.url}  fill objectFit='cover'  alt="coverphoto"   /></div>
+                    <p className="mt-2 pt-4 flex flex-col gap-10 lg:w-7/12 text-gray-300  dark:text-gray-300 max-h-100 "><p className='lg:flex hidden'>{short}</p>       
+                                <div className='flex w-full  lg:justify-between items-center'> <Link className="text-orange-400 hover:underline  text-sm" href={'/posts/' + slug} >Mehr</Link>
+                        <div className="flex items-center lg:justify-end pl-4">
+                        <img src={author.avatar.url} alt="" className='lg:h-5 h-4 border-slate-300 drop-shadow-md shadow-black rounded-3xl border-2'/>
+                        <p className="lg:font-bold text-sm text-gray-300 cursor-pointer px-2 dark:text-gray-300">{author.name}</p>
                     </div>
+                    </div>
+                    </p>
+                    
+                </div>
+                <div className="flex items-center justify-between mt-4 ">
+                    
                 </div>
             </div>
-            <div className='w-2/12 flex justify-start items-center'> 
-                   
-                    <div className='bg-slate-50 border-slate-400 border-dashed border-[1px] min-w-[50%] h-[1px] mr-[1px] flex flex-col justify-center items-start'></div>
-                   
+            <div className='lg:w-2/12 lg:flex hidden justify-center items-center'> 
                    <div className='h-full flex  items-center'>
-                    <div className=' border-slate-400 border-dashed border-[1px] w-[1px] h-full '></div>    
-                        <div className="transform rotate-90 font-bold text-3xl text-orange-400 pt-20 flex justify-start items-start ">
+                    <div className=' border-white/30 border-dashed border-[1px] w-[1px] h-full '></div>    
+                        <div className=" font-bold text-xl min-w-[100px] transfrom rotate-90 text-orange-400  ">
                          {toMonthName(datePublished.substring(5,7))}
                         </div>
                     </div>
-                    <div className=' min-w-1/12  flex flex-col justify-center items-center'></div>
-               
-               
+                <div className=' min-w-1/12  flex flex-col justify-center items-center'></div>
             </div>
         </div>
 

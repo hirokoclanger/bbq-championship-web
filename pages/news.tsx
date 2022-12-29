@@ -53,14 +53,18 @@ export default function Home({posts}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='px-16'  >
+      <main className='px-16 bg-black/25'>
 
             <NavigationBar/>
             
-     
-            <div className='flex flex-row-2 gap-4 justify-between'>
+            <div className='flex lg:flex-nowrap flex-wrap bg-black/25'>
+                <div className='bg-grill4 bg-cover bg-repeat-x  lg:w-5/12 w-full '><div className='flex gap-10  px-8 py-4 text-orange-400 font-bold text-4xl items-center justify-start bg-black/25'>
+                        <h3>Aktuelle News</h3>
+                     </div>
+                </div>
+            <div className='lg:flex  w-full justify-between'>
                      
-                <div className='py-5 '> 
+                <div className='py-4 bg-black/25'> 
                 {posts.map((post) =>(
                     <BlogCard
                     category = {post.category}
@@ -75,7 +79,7 @@ export default function Home({posts}) {
                 </div>
                 
                 
-            </div>
+            </div></div>
             <Footer/>
               
               
