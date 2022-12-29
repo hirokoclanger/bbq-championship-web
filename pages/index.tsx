@@ -13,10 +13,10 @@ export default function Home({posts}) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='px-16'  >
+      <main className='px-16 h-[100vh]'  >
 
             <Navbar/>
-            <div className='sm:flex flex-col-2 h-[90vh] sm:gap-10 lg:pl-0 pl-8 bg-black/25'>
+            <div className='sm:flex flex-col-2 h-[85vh] sm:gap-10 sm:pl-0 pl-8 bg-black/25'>
                 <div className='bg-grill4 bg-cover w-5/12 '>
                 </div>
                 <div className='px-2 py-5 '> 

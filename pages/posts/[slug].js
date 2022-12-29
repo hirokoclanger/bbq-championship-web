@@ -1,8 +1,9 @@
 import {GraphQLClient, gql} from 'graphql-request'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import Navbar from '../../components/NavBar'
+import Navbar from '../../components/NavBar';
 import Image from 'next/image';
+import Footer from '../../components/Footer';
 
 const graphcms = new GraphQLClient("https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clc4i967301ju01ulcopm3cft/master");
 
@@ -66,7 +67,7 @@ export default function BlogPost({post}){
     <main className="px-16">
         
     <Navbar/>
-    <section class="text-gray-600 body-font">
+    <section class="text-gray-300 bg-black/25 h-[89vh] body-font">
       <div class="container py-10 flex flex-col justify-between">
             <h1 className='mx-auto text-3xl font-semibold'>{post.title}</h1> 
         <div class="mx-auto py-4">
@@ -101,6 +102,7 @@ export default function BlogPost({post}){
         </div>
       </div>
     </section>
+        <Footer/>
     </main>
     )
     };
