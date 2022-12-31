@@ -47,12 +47,13 @@ nav{
   display: flex;
   flex-direction: column;
   position: fixed;
-  top: 91px;
+  top: 60px;
   width: 188px;
-  row-gap: 24px;
+  row-gap: 14px;
   right: -188px;
   padding: 24px 16px;
   transition: all 0.2s;
+  text-align: right;
   z-index: 100;
   color: rgb(209, 213, 219);
   background-color:  rgb(31, 31, 31, 1);
@@ -78,7 +79,7 @@ nav{
   align-items: center;
 }
 
-#content {
+.content {
   overflow: hidden;
   width: full;
   display: -webkit-box;
@@ -89,8 +90,8 @@ nav{
 @media screen and (min-width: 640px) {
   .nav__menu-list{
     animation-duration: 0s;
-    top: 63px;
-   
+
+
   }
   #content {
     overflow: visible;
@@ -102,12 +103,14 @@ nav{
 @media screen and (min-width: 1290px) {
   .nav__menu-bar{
     display: none;
+    
   }
   .nav__menu-list{
     position: unset;
     flex-direction: row;
     min-height: fit-content;
     width: fit-content;
+    
     column-gap: 24px;
     align-items: center;
     background-color: transparent;

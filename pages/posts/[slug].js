@@ -1,5 +1,7 @@
+import Headr from '../../components/Head.tsx'
 import {GraphQLClient, gql} from 'graphql-request'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+import Head from 'next/head'
 import { Carousel } from 'react-responsive-carousel';
 import Navbar from '../../components/NavBar';
 import Image from 'next/image';
@@ -64,12 +66,18 @@ export async function getStaticProps({ params }) {
 }
 export default function BlogPost({post}){
     return(
-    <main className="px-16">
+        <>
+      <Headr/>
+    <main className="px-16 h-[100vh]">
         
-    <Navbar/>
-    <section class="text-gray-300 bg-black/25 h-[89vh] body-font">
+    <Navbar/>   
+        <div className='sm:flex flex-col-2 h-[85vh] sm:pl-0  bg-black/25'>
+                <div className='bg-grill5 bg-cover w-5/12 '>
+                </div>
+ 
+    <div class="text-gray-300 bg-black/25 h-[85vh] overflow-y-scroll scrollbar-hide lg:px-8 px-4 body-font">
       <div class="container py-10 flex flex-col justify-between">
-            <h1 className='mx-auto text-3xl font-semibold'>{post.title}</h1> 
+            <h1 className='mx-auto hover:text-slate-400 text-3xl font-semibold'>{post.title}</h1> 
         <div class="mx-auto py-4">
          
           <div class="flex flex-col sm:flex-row mt-10">
@@ -81,15 +89,15 @@ export default function BlogPost({post}){
                 </svg>
             </div>
             <div class="flex flex-col items-center text-center justify-center">
-                <h2 class="font-medium title-font mt-4 text-gray-900 text-lg">{post.author.name}</h2>
+                <h2 class="font-medium title-font mt-4 text-gray-300 text-lg">{post.author.name}</h2>
                 <div class="w-12 h-1 bg-orange-400 rounded mt-2 mb-4"></div>
                 
-                <h1 class="font-medium title-font mt-4 text-gray-900 text-lg">{post.category}</h1>
+                <h1 class="font-medium title-font mt-4 text-gray-400 text-lg">{post.category}</h1>
                 <p class="text-center text-sm">Erstellt: {post.datePublished}</p>
               </div>
             </div>
-            <div class="sm:w-2/3 sm:pl-8 pr-8 sm:py-8 sm:border-l border-gray-200 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-              <p class="leading-relaxed text-lg mb-4" dangerouslySetInnerHTML={{__html: post.content.html}}></p>
+            <div class="sm:w-2/3 sm:pl-8 pr-8 sm:py-8 sm:border-l border-gray-400 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 sm:text-left text-center">
+              <p class="leading-relaxed lg:text-xl text-lg  mb-4" dangerouslySetInnerHTML={{__html: post.content.html}}></p>
             </div>
           </div>
           <div className='pt-10 '>
@@ -101,8 +109,10 @@ export default function BlogPost({post}){
           </div>
         </div>
       </div>
-    </section>
+    </div>
+        </div>
         <Footer/>
     </main>
+        </>
     )
     };
