@@ -54,7 +54,7 @@ export default function Home({ posts }) {
         <Navbar />
         <section className="flex lg:flex-nowrap lg:h-[85vh]  flex-wrap bg-black/25">
           <div className="bg-grill4 sm:flex hidden bg-cover bg-repeat-x  lg:w-4/12 w-full "></div>
-          <div className="lg:flex sm:overflow-y-scroll scrollbar-hide  w-full justify-between ">
+          <div className="lg:flex sm:overflow-y-scroll scrollbar-hide justify-between w-11/12 ">
             <div className="py-4">
               {posts.map((post:any) => (
                 <NewsCard

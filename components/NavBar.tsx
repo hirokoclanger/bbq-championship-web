@@ -7,8 +7,8 @@ const MENU_LIST = [
   { text: "News", href: "/news" },
   { text: "Sponsoren", href: "/sponsors" },
   { text: "Events", href: "/events" },
-  { text: "Informationen", href: "/informationen" },
-  { text: "Anmeldung", href: "/anmeldung" },
+  { text: "Informationen", href: "/information" },
+  { text: "Anmeldung", href: "/register" },
 ];
 const Navbar = () => {
   const [navActive, setNavActive] = useState(null);
@@ -26,7 +26,7 @@ const Navbar = () => {
               Grillmeisterschaft{" "}
             </Link>
             <Link
-              className="text-3xl  font-bold text-gray-200 transition-colors duration-500 transform dark:text-white lg:text-3xl hover:text-orange-400"
+              className="text-3xl font-bold text-gray-200 transition-colors duration-500 transform dark:text-white lg:text-3xl hover:text-orange-400"
               href="/"
             >
               {" "}

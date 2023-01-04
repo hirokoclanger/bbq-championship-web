@@ -28,10 +28,10 @@ export default function EventsComponenent ({
 
   return (
            
-           <div className="flex flex-col bg-black/25 items-center p-8 
+           <div className="flex flex-col  items-center p-8 
             transition-colors hover:text-slate-200 duration-300 transform border cursor-pointer 
-            border-transparent group hover:bg-black/75 hover:border-slate-200/25 dark:hover:border-transparent">
-
+            border-transparent group hover:bg-black/25  hover:border-transparent">
+ 
    <div
             className="mt-4 mx-auto w-full "
             style={{
