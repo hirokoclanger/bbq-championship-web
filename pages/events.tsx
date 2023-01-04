@@ -57,7 +57,7 @@ export default function Events({events}) {
 
             <Navbar/>
             <div className='sm:flex flex-col-2 h-[85vh] sm:gap-10   px-0 bg-black/25'>
-                <div className='bg-grill1 bg-cover w-4/12 '>
+                <div className='bg-grill1 sm:flex hidden  bg-cover w-4/12 '>
                 </div>
                 <div className='overflow-y-scroll scrollbar-hide h-[85vh] sm:w-[100vw]'>
                     <div className='text-center  pt-8 px-8 text-4xl text-semibold text-slate-100'>
