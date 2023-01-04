@@ -9,9 +9,9 @@ export default function Home() {
       <Headr />
       <main className="px-16 h-[100vh]">
         <Navbar />
-        <div className="sm:flex flex-col-2 h-[85vh] sm:gap-10 sm:pl-0 pl-8 bg-black/25">
-          <div className="bg-grill4 bg-cover w-5/12 "></div>
-          <div className="px-2 py-5 ">
+        <div className="flex lg:flex-nowrap h-[85vh] flex-wrap sm:gap-10 sm:pl-0 pl-8 bg-black/25">
+          <div className="bg-grill4 bg-cover w-3/12 "></div>
+          <div className="py-5 ">
             <LandingView />
           </div>
         </div>

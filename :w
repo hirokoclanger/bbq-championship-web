@@ -11,18 +11,18 @@ export default function Footer() {
         >
           <p className="text-sm py-1">Impressum</p>
         </Link>
-        <div className="flex text-gray-300 text-sm  items-center flex-row w-auto">
+        <div className="flex flex-col w-auto">
          <p>Copyright 2022</p>
         <Link
-          href="https://github.com/NavigationHazard"
+          href="https://de-de.facebook.com/GrillmeisterschaftPoing/"
           className="mx-2 py-1 text-gray-300 transition-colors duration-300  dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
          >
           <svg
-          className="h-6 flex items-center justify-center"
+          className="h-10"
   aria-describedby="desc"
   aria-labelledby="title"
   role="img"
-  viewBox="0 0 74 74"
+  viewBox="0 0 114 114"
   xmlns="http://www.w3.org/2000/svg"
   xmlnsXlink="http://www.w3.org/1999/xlink"
 >

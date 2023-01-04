@@ -43,12 +43,12 @@ export async function getStaticProps() {
   const { eventsID:any } = await graphcms.request(QUERY);
   return {
     props: {
-      eventsID:any,
+      events:any,
     },
     revalidate: 10,
   };
 }
-export default function Events({eventsID}) {
+export default function Events({events}) {
    
   return (
     <>
@@ -57,11 +57,15 @@ export default function Events({eventsID}) {
 
             <Navbar/>
             <div className='sm:flex flex-col-2 h-[85vh] sm:gap-10   px-0 bg-black/25'>
-                <div className='bg-grill3 bg-cover w-5/12 '>
+                <div className='bg-grill1 bg-cover w-4/12 '>
                 </div>
                 <div className='overflow-y-scroll scrollbar-hide h-[85vh] sm:w-[100vw]'>
-                <div className="grid  lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-8  p-8 ">
-                {eventsID.map((event:any) => (
+                    <div className='text-center  pt-8 px-8 text-4xl text-semibold text-slate-100'>
+                       <h1> Grillmeisterschaften </h1>
+                       <div className='bg-orange-400 w-auto h-[1.5px] mt-6 mx-auto'></div>
+                    </div>
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 p-8 ">
+                {events.map((event:any) => (
                 <EventsComponent key={event.id}
                     gewinner={event.gewinner}
                     facebooklink={event.facebooklink}

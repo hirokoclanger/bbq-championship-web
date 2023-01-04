@@ -27,7 +27,10 @@ export default function EventsComponenent ({
 
 
   return (
-            <div className="flex flex-col bg-slate-50 items-center p-8 transition-colors hover:text-gray-200 duration-300 transform border cursor-pointer rounded-xl hover:border-transparent group hover:bg-black/25 dark:border-gray-700 dark:hover:border-transparent">
+           
+           <div className="flex flex-col bg-black/25 items-center p-8 
+            transition-colors hover:text-slate-200 duration-300 transform border cursor-pointer 
+            border-transparent group hover:bg-black/75 hover:border-slate-200/25 dark:hover:border-transparent">
 
    <div
             className="mt-4 mx-auto w-full "
@@ -44,17 +47,17 @@ export default function EventsComponenent ({
               alt={eventcoverPhoto.fileName}
             />
           </div>
-                <h1 className="mt-4 text-xl text-center font-semibold text-gray-700 capitalize dark:text-white group-hover:text-white">
+                <h1 className="mt-4 text-xl text-center font-semibold text-slate-100 capitalize dark:text-white group-hover:text-white">
         <Link
           className="lg:text-2xl font-bold   hover:underline"
           href={"/events/" + slugevent}> {eventTitle} 
         </Link>
                 </h1>
-                <p className="mt-2 text-gray-500 capitalize dark:text-gray-300 group-hover:text-gray-300">{location}</p>
+                <p className="mt-2 text-slate-300 capitalize dark:text-gray-300 group-hover:text-gray-300">{location}</p>
 
                 <div className="flex mt-3 -mx-2">
                     
-                    <a href={facebooklink} className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Facebook">
+                    <a href={facebooklink} className="mx-2 text-orange-400 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300 group-hover:text-white" aria-label="Facebook">
                         <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -64,7 +67,7 @@ export default function EventsComponenent ({
                     </a>
 
                                    </div>
-                                   <div className="pt-4">
+                                   <div className="pt-4 text-slate-100">
                                    Gewinner:<b> {gewinner} </b>
                                    </div>
             </div>

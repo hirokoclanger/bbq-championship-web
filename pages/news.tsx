@@ -53,7 +53,7 @@ export default function Home({ posts }) {
       <main className="px-16  h-[100vh]">
         <Navbar />
         <section className="flex lg:flex-nowrap lg:h-[85vh]  flex-wrap bg-black/25">
-          <div className="bg-grill4 bg-cover bg-repeat-x  lg:w-5/12 w-full "></div>
+          <div className="bg-grill4 bg-cover bg-repeat-x  lg:w-4/12 w-full "></div>
           <div className="lg:flex sm:overflow-y-scroll scrollbar-hide  w-full justify-between ">
             <div className="py-4">
               {posts.map((post:any) => (
