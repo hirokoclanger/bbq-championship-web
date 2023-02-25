@@ -9,32 +9,27 @@ const graphcms = new GraphQLClient(
 
 const QUERY = gql`
   {
-    posts {
-      id
-      title
+    impressums {
+      id,
       content {
         html,
         text
-      }
-      coverPhoto {
-        id
-        url
       }
     }
   }
 `;
 
 export async function getStaticProps() {
-  const { posts:any } = await graphcms.request(QUERY);
+  const { impressums:any } = await graphcms.request(QUERY);
   return {
     props: {
-      posts:any,
+      impressums:any,
     },
     revalidate: 10,
   };
 }
 
-export default function Home({ posts }) {
+export default function Home({ impressums }) {
   return (
     <>
       <Headr />
@@ -44,12 +39,10 @@ export default function Home({ posts }) {
           <div className="bg-grill4 sm:flex hidden bg-cover bg-repeat-x  lg:w-4/12 w-full "></div>
           <div className="lg:flex sm:overflow-y-scroll scrollbar-hide w-11/12 justify-between ">
             <div className="py-4">
-              {posts.map((post:any) => (
+              {impressums.map((imp:any) => (
                 <ImpressumCard
-                  title={post.title}
-                  coverPhoto={post.coverPhoto}
-                  key={post.id}
-                  content={post.content}
+                  key={imp.id}
+                  content={imp.content}
                 />
               ))}
             </div>

@@ -11,7 +11,7 @@ export default function Footer() {
           <p className="text-sm py-1">Impressum</p>
         </Link>
         <div className="flex text-gray-300 text-sm  items-center flex-row w-auto">
-         <p>Copyright 2022</p>
+         <p>Copyright {(new Date().getFullYear())}</p>
         <Link
           href="https://github.com/NavigationHazard"
           className="mx-2 py-1 text-gray-300 transition-colors duration-300  dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"

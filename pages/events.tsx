@@ -16,6 +16,10 @@ const QUERY = gql`
         eventTitle
         gewinner
         location
+        ergebnisliste{
+            html
+            text
+            }
         facebooklink
         markdown
         preisgelder
@@ -77,6 +81,7 @@ export default function Events({events}) {
                     eventDetails={event.eventDetails}
                     eventTitle={event.eventTitle}
                     eventcoverPhoto={event.eventcoverPhoto}
+                    ergebnisliste={event.ergebnisliste}
                     slugevent={event.slugevent}
                 />
                 ))}

@@ -10,32 +10,30 @@ const graphcms = new GraphQLClient(
 
 const QUERY = gql`
   {
-    posts {
+     sponsors {
+    id
+    sponsorLink
+    sponsorShortDescription
+    sponsorTitle
+    sponsorImage {
+      fileName
       id
-      title
-      content {
-        html,
-        text
-      }
-      coverPhoto {
-        id
-        url
-      }
+      url
     }
-  }
+  }  }
 `;
 
 export async function getStaticProps() {
-  const { posts:any } = await graphcms.request(QUERY);
+  const { sponsors:any } = await graphcms.request(QUERY);
   return {
     props: {
-      posts:any,
+      sponsors:any,
     },
     revalidate: 10,
   };
 }
 
-export default function Home({ posts }) {
+export default function Home({ sponsors }) {
   return (
     <>
       <Headr />
@@ -43,15 +41,15 @@ export default function Home({ posts }) {
         <Navbar />
         <section className="flex lg:flex-nowrap lg:h-[85vh]  flex-wrap bg-black/25">
           <div className="bg-grill4 sm:flex hidden bg-cover bg-repeat-x  lg:w-4/12 w-full "></div>
-          <div className="lg:flex sm:overflow-y-scroll scrollbar-hide   justify-between w-11/12">
-            <div className="py-4">
-              {posts.map((post:any) => (
+          <div className="lg:flex  sm:overflow-y-scroll scrollbar-hide   justify-between w-11/12">
+            <div className="py-8 grid lg:grid-cols-2 grid-cols-1 gap-4 w-full">
+              {sponsors.map((spon:any) => (
                 <SponsorsCard
-                  category={post.category}
-                  title={post.title}
-                  coverPhoto={post.coverPhoto}
-                  key={post.id}
-                  content={post.content}
+                  sponsorLink={spon.sponsorLink}
+                  sponsorTitle={spon.sponsorTitle}
+                  sponsorImage={spon.sponsorImage}
+                  key={spon.id}
+                  sponsorShortDescription={spon.sponsorShortDescription}
                 />
               ))}
             </div>
